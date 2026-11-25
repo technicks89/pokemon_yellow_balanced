@@ -255,7 +255,7 @@ jobs:
             for f in "$RUNNER_TEMP"/base/pokemon_yellow_legacy*.{gbc,sym,map}; do
               if [ -e "$f" ]; then mv "$f" "${f/pokemon_yellow_legacy/pokemon_yellow_balanced}"; fi
             done
-            cp"$RUNNER_TEMP"/base/pokemon_yellow_balanced*.{gbc,sym,map} base-out/
+            cp "$RUNNER_TEMP"/base/pokemon_yellow_balanced*.{gbc,sym,map} base-out/
             echo "$BASE_SHA" > base-out/status
             echo "Base: $BASE_SHA" >> "$GITHUB_STEP_SUMMARY"
           else
