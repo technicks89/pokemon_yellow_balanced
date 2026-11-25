@@ -252,6 +252,7 @@ jobs:
           git worktree add "$RUNNER_TEMP/base" "$BASE_SHA"
           if make -C "$RUNNER_TEMP/base" -j"$(nproc)" yellow yellow_debug; then
             # Base commits from before the rename build pokemon_yellow_legacy*.
+            # Remove this loop once no open PR's base predates f94f1e3.
             for f in "$RUNNER_TEMP"/base/pokemon_yellow_legacy*.{gbc,sym,map}; do
               if [ -e "$f" ]; then mv "$f" "${f/pokemon_yellow_legacy/pokemon_yellow_balanced}"; fi
             done

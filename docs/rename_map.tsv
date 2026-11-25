@@ -1161,3 +1161,13 @@ SRAM_ENABLE	RAMG_SRAM_ENABLE	pret hardware.inc (#46), constant
 rLCDC_ENABLE	B_LCDC_ENABLE	pret hardware.inc (#46), constant
 rLCDC_ENABLE_MASK	LCDC_ON	pret hardware.inc (#46), constant
 rWave_0	_AUD3WAVERAM	pret hardware.inc (#46), constant
+pokemon_yellow_legacy	pokemon_yellow_balanced	project rename (f94f1e3)
+pokemon_yellow_legacy_obj	pokemon_yellow_balanced_obj	project rename (f94f1e3)
+pokemon_yellow_legacy_debug	pokemon_yellow_balanced_debug	project rename (f94f1e3)
+pokemon_yellow_legacy_debug_obj	pokemon_yellow_balanced_debug_obj	project rename (f94f1e3)
+pokemon_yellow_legacy_debug_pad	pokemon_yellow_balanced_debug_pad	project rename (f94f1e3)
+pokemon_yellow_legacy_pad	pokemon_yellow_balanced_pad	project rename (f94f1e3)
+pokemon_yellow_legacy_vc	pokemon_yellow_balanced_vc	project rename (f94f1e3)
+pokemon_yellow_legacy_vc_obj	pokemon_yellow_balanced_vc_obj	project rename (f94f1e3)
+pokemon_yellow_legacy_vc_pad	pokemon_yellow_balanced_vc_pad	project rename (f94f1e3)
+LegacyText	BalancedText	project rename (f94f1e3)

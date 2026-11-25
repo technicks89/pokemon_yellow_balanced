@@ -39,6 +39,7 @@ The comparison checks need a build of the base commit:
 ```sh
 git worktree add --detach ../base main    # or a commit, e.g. the merge base: $(git merge-base HEAD main)
 make -C ../base yellow yellow_debug
+for f in ../base/pokemon_yellow_legacy*.{gbc,sym,map}; do [ -e "$f" ] && mv "$f" "${f/pokemon_yellow_legacy/pokemon_yellow_balanced}"; done    # bases from before the rename (f94f1e3)
 mkdir -p base-out && cp ../base/pokemon_yellow_balanced*.{gbc,sym,map} base-out/
 python3 .github/scripts/compare_builds.py roms base-out .    # also: save, banks
 git worktree remove ../base

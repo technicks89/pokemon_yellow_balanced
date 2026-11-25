@@ -38,6 +38,10 @@ Pokémon Yellow ROM to get the game. The ROM itself isn't included.
 - Emulators find the save by the ROM's file name. If the new ROM has a
   different name, rename your old `.sav` file to match it (same name, `.sav`
   extension), or the game will look like it has no save.
+- This fork was released as *Pokémon Yellow Legacy* up to 1.3.0, and these
+  steps used to suggest the name `Pokemon Yellow Legacy.gbc`. If your save is
+  `Pokemon Yellow Legacy.sav`, either keep that name for the new ROM or rename
+  the save to `Pokemon Yellow Balanced.sav`.
 - Normal and Hard saves keep working. Pick Starter is a new mode, chosen when
   starting a new game.
 

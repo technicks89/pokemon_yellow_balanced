@@ -1,6 +1,6 @@
 # Pokémon Yellow Balanced
 
-Pokémon Yellow Balanced is a standalone fork of [Pokémon Yellow Legacy](https://github.com/cRz-Shadows/Pokemon_Yellow_Legacy) that adds Pick Starter mode, CI and release tooling. It is developed separately and is not part of the original project. The description below is adapted from Yellow Legacy, whose design it keeps.
+Pokémon Yellow Balanced is a standalone fork of [Pokémon Yellow Legacy](https://github.com/cRz-Shadows/Pokemon_Yellow_Legacy) that adds Pick Starter mode, CI and release tooling. It is developed separately and is not part of the original project. It was released as *Pokémon Yellow Legacy* (fork releases 1.1.1 to 1.3.0, repository `technicks89/Pokemon_Yellow_Legacy`) before being renamed; saves carry over, see [patching instructions](docs/patching_instructions.md#saves). The description below is adapted from Yellow Legacy, whose design it keeps.
 
 The Yellow Legacy project is the prequel to [Crystal Legacy](https://github.com/cRz-Shadows/Pokemon_Crystal_Legacy) by content creator Patrick Smith ([TheSmithPlays](https://www.youtube.com/@TheSmithPlays)), and the second project in his planned Legacy series. It is based on [the Pokémon Yellow Disassembly](https://github.com/pret/pokeyellow). The Legacy project is focused on changing the base game in a way that adds quality of life additions and better balancing with the benefit of twenty years of hindsight. The primary goal of each mod is to keep the original feeling of the game while still making meaningful improvements for the player. This means that certain idiosyncrasies of the first generation of Pokémon games will remain, as they are considered an essential aspect to the core experience.
 
@@ -34,12 +34,15 @@ Besides Normal and Hard, a new game can be started in **Pick Starter** mode. It 
 * Releases: build the tagged commit, then `python3 tools/make_release_patches.py <clean Yellow ROM> pokemon_yellow_balanced.gbc "Pokemon Yellow Balanced VX.Y.Z Patch"` makes the `.bps` and the zip (use the normal ROM, not `_vc`).
 
 
-## A complete list of features can be found here:
+## Yellow Legacy feature list (the original project)
+
+These describe Yellow Legacy, which this fork is based on. For what Yellow Balanced adds, see [docs/pick_starter_mode.md](docs/pick_starter_mode.md) (including the release notes) and the [player guide](docs/player_guide.pdf).
+
 - Full doc: 
     - [Make a Copy (Recommended)](https://docs.google.com/document/d/1JlZRhW2fcBUd7y23DB7MGfJCU95FK_yJI-QdRFdMawI/copy)
     - [Download as PDF](https://docs.google.com/document/d/1JlZRhW2fcBUd7y23DB7MGfJCU95FK_yJI-QdRFdMawI/export?format=pdf)
 
-These videos also provide an overview of the hack and the ideology behind it:
+These videos give an overview of Yellow Legacy and the ideology behind it:
 - Release 1.0: https://youtu.be/jTH2fVqHPwc
 - Prerelease: https://www.youtube.com/playlist?list=PLyv5bsGgaxonXuHoUUsv3mM7xzTwENccO
 

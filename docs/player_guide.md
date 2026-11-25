@@ -13,7 +13,7 @@ Each release is a patch. Apply it to your own copy of the original English Poké
 4. Check the patched ROM's SHA-1 against the release notes. If it doesn't match, start again from a clean ROM. Never patch an already patched ROM.
 5. Load the result in your emulator (for example mGBA on PC, Delta on iPhone).
 
-Moving from an older Yellow Balanced (or Yellow Legacy) version: save in a Pokémon Center and back up your save first. Emulators find the save by the ROM's file name, so rename your old `.sav` to match the new ROM if the name changed. Normal, Hard and Pick Starter saves keep working.
+Moving from an older Yellow Balanced (or Yellow Legacy) version: save in a Pokémon Center and back up your save first. Emulators find the save by the ROM's file name, so rename your old `.sav` to match the new ROM if the name changed. This fork was released as Pokémon Yellow Legacy up to 1.3.0: if your save is `Pokemon Yellow Legacy.sav`, keep that ROM name or rename the save to `Pokemon Yellow Balanced.sav`. Normal, Hard and Pick Starter saves keep working.
 
 The full steps are in [patching_instructions.md](patching_instructions.md). To build the game from source instead, see [INSTALL.md](../INSTALL.md).
 

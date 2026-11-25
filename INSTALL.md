@@ -2,7 +2,7 @@
 
 These instructions explain how to set up the tools required to build **pokemon_yellow_balanced**, including [**rgbds**](https://github.com/gbdev/rgbds), which assembles the source files into a ROM.
 
-If you run into trouble, ask for help on IRC or Discord (see [README.md](README.md)).
+If you run into trouble with this repository, open an issue at [technicks89/pokemon_yellow_balanced](https://github.com/technicks89/pokemon_yellow_balanced/issues). For general RGBDS or disassembly questions, the [pret](https://github.com/pret) community can help.
 
 
 ## Windows 10 or 11

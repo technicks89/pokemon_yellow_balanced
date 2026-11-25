@@ -156,7 +156,7 @@ CreditsTextPointers:
 ; 18 / 19 = -8
 CreditsText_Version:
 	db -7, "YELLOW BALANCED"
-	next   "    STAFF@"
+	next   "     STAFF@"
 CreditsText_Tajiri:
 	db -6, "SATOSHI TAJIRI@"
 CreditsText_Oota:

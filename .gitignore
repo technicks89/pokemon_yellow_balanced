@@ -20,9 +20,7 @@
 
 # rgbds extras
 # *.map
-pokemon_yellow_balanced.map
-pokemon_yellow_balanced_debug.map
-pokemon_yellow_balanced_vc.map
+pokemon_yellow_*.map
 
 *.sym
 
