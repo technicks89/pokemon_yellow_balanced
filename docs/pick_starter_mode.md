@@ -340,5 +340,7 @@ Pick Starter and the Normal and Hard rules, and existing saves, are otherwise un
 - Pick Starter mode: you pick your starter right after choosing the mode, before the intro, and Oak catches it in the tall grass north of Pallet Town instead of a Pikachu. In his lab he gives it to you as the Pokémon he caught earlier.
 - Pick Starter mode: the rival counters every pick except Pikachu. Besides the Red/Blue counters for the Bulbasaur, Charmander and Squirtle lines, he picks a Pokémon that beats yours by type: Squirtle, Charmander, Bulbasaur, Machop, Geodude, Magnemite, Drowzee, Gastly, Jynx or Clefairy. The ball he snatches in Oak's lab already holds it, so there's no Eevee swap. He keeps its line in every rival battle and evolves it by level. Before the lab battle he comments on a legendary or a Pokémon that can't attack yet, or names his counter.
 - Pick Starter saves made before getting a starter in an earlier version open the list in Oak's lab.
+- Fixed: Dodrio's sprite was garbled because it loaded from the wrong ROM bank; the species renumbering moved Dodrio next to Beedrill.
+- Fixed: badge stat boosts were ×1.25 for every Pokémon except Pikachu. They are ×1.125 for every Pokémon again, as in Red/Blue/Yellow.
 - New player guide: [player_guide.pdf](player_guide.pdf).
 - New types for nine Pokémon: Charizard Fire/Dragon, Blastoise Water/Steel, Gyarados Water/Dragon, Poliwhirl Water/Fighting, Growlithe Fire/Dark, Psyduck and Golduck Water/Psychic, and Jigglypuff and Wigglytuff Fairy/Normal (Fairy is now their first type).

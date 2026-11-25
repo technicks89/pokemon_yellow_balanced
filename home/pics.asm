@@ -9,13 +9,18 @@ UncompressMonSprite::
 	ld a, [hl]
 	ld [wSpriteInputPtr+1], a
 ; define (by index number) the bank that a pokemon's image is in
-; index = MEW:             bank $1
-; index = FOSSIL_KABUTOPS: bank $B
-;       index < $1F:       bank $9 ("Pics 1")
-; $1F ≤ index < $4A:       bank $A ("Pics 2")
-; $4A ≤ index < $74:       bank $B ("Pics 3")
-; $74 ≤ index < $99:       bank $C ("Pics 4")
-; $99 ≤ index:             bank $D ("Pics 5")
+; index = FOSSIL_KABUTOPS:      BANK(FossilKabutopsPic)
+;            index ≤ TANGELA:  "Pics 1"
+; GROWLITHE ≤ index ≤ MOLTRES:  "Pics 2"
+;  ARTICUNO ≤ index ≤ BEEDRILL: "Pics 3"
+;    DODRIO ≤ index ≤ STARMIE:  "Pics 4"
+; BULBASAUR ≤ index:            "Pics 5"
+; The species list has no MissingNo gaps, so DODRIO directly follows BEEDRILL.
+	ASSERT BANK(TangelaPicFront) != BANK(GrowlithePicFront)
+	ASSERT BANK(MoltresPicFront) != BANK(ArticunoPicFront)
+	ASSERT BANK(BeedrillPicFront) != BANK(DodrioPicFront)
+	ASSERT BANK(StarmiePicFront) != BANK(BulbasaurPicFront)
+	ASSERT DODRIO == BEEDRILL + 1
 	ld a, [wCurPartySpecies]
 	ld b, a
 	cp FOSSIL_KABUTOPS
@@ -30,7 +35,7 @@ UncompressMonSprite::
 	ld a, BANK("Pics 2")
 	jr c, .GotBank
 	ld a, b
-	cp BEEDRILL + 2
+	cp BEEDRILL + 1
 	ld a, BANK("Pics 3")
 	jr c, .GotBank
 	ld a, b
