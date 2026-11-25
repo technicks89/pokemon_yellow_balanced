@@ -4,7 +4,7 @@ Every pull request and every push to `main` runs `.github/workflows/ci.yml`. Eac
 
 | Check | What it does | Can fail? |
 |---|---|---|
-| **Build** | Builds `pokemon_yellow_legacy.gbc`, the debug ROM and the Virtual Console patch (and its `_vc` ROM) with RGBDS 1.0.4. | yes |
+| **Build** | Builds `pokemon_yellow_balanced.gbc`, the debug ROM and the Virtual Console patch (and its `_vc` ROM) with RGBDS 1.0.4. | yes |
 | **Warnings** | Fails on any build warning except the known title truncation (`.github/scripts/check_warnings.py`). | yes |
 | **Tracked files** | Fails if the build modified any tracked file. | yes |
 | **Smoke test** | Plays the opening in PyBoy: new game in Normal, Hard and Pick Starter (Charmander, Squirtle, Pikachu, the list wrap to Mew, paging), with the picker in the intro before the name screens; Oak's words when he gives the starter; the rival's comment on the pick and his counter (Squirtle against Charmander, Bulbasaur against Squirtle, Gastly against Mew, Geodude against Pidgey), first rival battle, Oak's lab scenes; a save from before the picker moved to the intro (the picker opens in the lab); the weak-starter warning for Magikarp; the picker's SELECT pages (types, base stats, moves); the debug ROM must reach its menu (`.github/scripts/smoke_test.py`). | yes |
@@ -39,7 +39,7 @@ The comparison checks need a build of the base commit:
 ```sh
 git worktree add --detach ../base main    # or a commit, e.g. the merge base: $(git merge-base HEAD main)
 make -C ../base yellow yellow_debug
-mkdir -p base-out && cp ../base/pokemon_yellow_legacy*.{gbc,sym,map} base-out/
+mkdir -p base-out && cp ../base/pokemon_yellow_balanced*.{gbc,sym,map} base-out/
 python3 .github/scripts/compare_builds.py roms base-out .    # also: save, banks
 git worktree remove ../base
 ```
@@ -63,7 +63,7 @@ To check for new warnings: `make yellow yellow_debug yellow_vc 2>&1 | tee build.
 
 `.github/workflows/upstream-watch.yml` runs every Monday (and on demand from the Actions tab, with an optional dry run). It compares this fork's `main` with [cRz-Shadows/Pokemon_Yellow_Legacy](https://github.com/cRz-Shadows/Pokemon_Yellow_Legacy) and keeps one **`upstream-sync`** issue listing the upstream commits the fork doesn't have (`.github/scripts/upstream_watch.py`).
 
-- It only runs in `technicks89/Pokemon_Yellow_Legacy`, and the `upstream-sync` label must exist there.
+- It only runs in `technicks89/pokemon_yellow_balanced`, and the `upstream-sync` label must exist there.
 - New upstream commits: the open issue is updated (with a comment), or a new issue is opened if the last one was closed.
 - Closing the issue means "seen, not merging these": no new issue is opened until upstream has new commits.
 - Once the fork contains everything, the open issue is closed automatically.

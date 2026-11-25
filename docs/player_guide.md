@@ -1,19 +1,19 @@
-# Pokémon Yellow Legacy: Player Guide
+# Pokémon Yellow Balanced: Player Guide
 
-This guide covers this fork of Pokémon Yellow Legacy: how to get the game, the three game modes, and how Pick Starter mode and your rival work. The PDF version is [player_guide.pdf](player_guide.pdf), built from this file by `tools/make_guide.py`.
+This guide covers Pokémon Yellow Balanced, a fork of Pokémon Yellow Legacy: how to get the game, the three game modes, and how Pick Starter mode and your rival work. The PDF version is [player_guide.pdf](player_guide.pdf), built from this file by `tools/make_guide.py`.
 
 
 ## Getting the game
 
 Each release is a patch. Apply it to your own copy of the original English Pokémon Yellow ROM; the ROM itself isn't included.
 
-1. Get a **clean** English *Pokémon Yellow Version* ROM (.gb or .gbc). It must not be modified: no randomizer, no other hack, no earlier Yellow Legacy version. Its SHA-1 must be `cc7d03262ebfaf2f06772c1a480c7d9d5f4a38e1`.
+1. Get a **clean** English *Pokémon Yellow Version* ROM (.gb or .gbc). It must not be modified: no randomizer, no other hack, no earlier Yellow Balanced or Yellow Legacy version. Its SHA-1 must be `cc7d03262ebfaf2f06772c1a480c7d9d5f4a38e1`.
 2. Download the patch zip from the Releases page and take the `.bps` file out of it.
 3. Apply the `.bps` to the ROM with a patcher such as ROM Patcher JS (https://www.marcrobledo.com/RomPatcher.js/, works in any browser, including on phones).
 4. Check the patched ROM's SHA-1 against the release notes. If it doesn't match, start again from a clean ROM. Never patch an already patched ROM.
 5. Load the result in your emulator (for example mGBA on PC, Delta on iPhone).
 
-Moving from an older Yellow Legacy version: save in a Pokémon Center and back up your save first. Emulators find the save by the ROM's file name, so rename your old `.sav` to match the new ROM if the name changed. Normal, Hard and Pick Starter saves keep working.
+Moving from an older Yellow Balanced (or Yellow Legacy) version: save in a Pokémon Center and back up your save first. Emulators find the save by the ROM's file name, so rename your old `.sav` to match the new ROM if the name changed. Normal, Hard and Pick Starter saves keep working.
 
 The full steps are in [patching_instructions.md](patching_instructions.md). To build the game from source instead, see [INSTALL.md](../INSTALL.md).
 
@@ -85,7 +85,7 @@ The ball your rival snatches holds a Pokémon that beats yours, and he keeps tha
 
 Before your first battle he comments on your choice. A legendary or a Pokémon that can't attack yet gets its own remark. Otherwise he names the Pokémon he got ("Your PIDGEY? My GEODUDE can handle that!").
 
-His Pokémon evolves as you'd expect: Machop becomes Machoke at Lv28 and Machamp at Lv38, Geodude Graveler at Lv25 and Golem at Lv38, Magnemite Magneton at Lv30, Drowzee Hypno at Lv26, Gastly Haunter at Lv25 and Gengar at Lv42, Clefairy Clefable from Lv30, and the starters at their usual levels. His other Pokémon come from his usual Legacy teams.
+His Pokémon evolves as you'd expect: Machop becomes Machoke at Lv28 and Machamp at Lv38, Geodude Graveler at Lv25 and Golem at Lv38, Magnemite Magneton at Lv30, Drowzee Hypno at Lv26, Gastly Haunter at Lv25 and Gengar at Lv42, Clefairy Clefable from Lv30, and the starters at their usual levels. His other Pokémon come from his usual Yellow Balanced teams.
 
 <!-- guide: rival counter summary -->
 The rival's Pokémon for every pick is listed in [pick_starter_mode.md](pick_starter_mode.md#the-rivals-counter).

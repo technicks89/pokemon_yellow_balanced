@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-A library for use with compressed monster and trainer pics in pokemon_yellow_legacy.
+A library for use with compressed monster and trainer pics in pokemon_yellow_balanced.
 """
 from __future__ import absolute_import
 from __future__ import division
@@ -26,7 +26,7 @@ def bitflip(x, n):
 
 class Decompressor:
     """
-    pokemon_yellow_legacy pic decompression.
+    pokemon_yellow_balanced pic decompression.
 
     Ported to python 2.7 from the python 3 code at https://github.com/magical/pokemon-sprites-rby.
     """
@@ -228,7 +228,7 @@ def bytes_to_bits(bytelist):
 
 class Compressor:
     """
-    pokemon_yellow_legacy pic compression.
+    pokemon_yellow_balanced pic compression.
 
     Adapted from stag019's C compressor.
     """

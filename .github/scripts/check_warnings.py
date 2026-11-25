@@ -10,7 +10,7 @@ import sys
 # Warnings the build is known to print. Keep this list short.
 ALLOWED = [
     # rgbfix: the cartridge header title is limited to 15 characters
-    re.compile(r'Truncating title "POKEMON YELLOW LEGACY" to 15 chars'),
+    re.compile(r'Truncating title "POKEMON YELLOW BALANCED" to 15 chars'),
 ]
 
 

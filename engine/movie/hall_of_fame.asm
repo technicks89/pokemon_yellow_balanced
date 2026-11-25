@@ -244,27 +244,27 @@ HoFDisplayPlayerStats:
 	SetEvent EVENT_HALL_OF_FAME_DEX_RATING
 	predef DisplayDexRating
 
-	hlcoord 11, 0 ; Legacy Text Box
-	lb bc, 2, 7
+	hlcoord 10, 0 ; Title Text Box
+	lb bc, 2, 8
 	call TextBoxBorder
 
 	test_hard_rules ; Check if player is on hard mode
 	jr z, .NormalModeText
 
-	hlcoord 12, 1
-	ld de, LegacyText
+	hlcoord 11, 1
+	ld de, BalancedText
 	call PlaceString
-	hlcoord 12, 2
+	hlcoord 11, 2
 	ld de, HardText
 	call PlaceString
 	jp .Next1
 
 .NormalModeText
-	hlcoord 12, 1
+	hlcoord 11, 1
 	ld de, YellowText
 	call PlaceString
-	hlcoord 12, 2
-	ld de, LegacyText
+	hlcoord 11, 2
+	ld de, BalancedText
 	call PlaceString
 .Next1
 
@@ -272,7 +272,7 @@ HoFDisplayPlayerStats:
 	lb bc, 6, 10
 	call TextBoxBorder
 	hlcoord 0, 0
-	lb bc, 2, 9
+	lb bc, 2, 8 ; leaves room for the title box (names are at most 7 letters)
 	call TextBoxBorder
 	hlcoord 1, 2
 	ld de, wPlayerName
@@ -310,8 +310,8 @@ HoFPrintTextAndDelay:
 YellowText:
 	db "YELLOW@"
 
-LegacyText:
-	db "LEGACY@"
+BalancedText:
+	db "BALANCED@"
 
 HardText:
 	db "HARD@"

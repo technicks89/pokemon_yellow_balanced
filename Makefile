@@ -1,8 +1,8 @@
 roms := \
-	pokemon_yellow_legacy.gbc \
-	pokemon_yellow_legacy_debug.gbc
+	pokemon_yellow_balanced.gbc \
+	pokemon_yellow_balanced_debug.gbc
 patches := \
-	pokemon_yellow_legacy.patch
+	pokemon_yellow_balanced.patch
 
 rom_obj := \
 	audio.o \
@@ -16,9 +16,9 @@ rom_obj := \
 	gfx/sprites.o \
 	gfx/tilesets.o
 
-pokemon_yellow_legacy_obj       := $(rom_obj)
-pokemon_yellow_legacy_debug_obj := $(rom_obj:.o=_debug.o)
-pokemon_yellow_legacy_vc_obj    := $(rom_obj:.o=_vc.o)
+pokemon_yellow_balanced_obj       := $(rom_obj)
+pokemon_yellow_balanced_debug_obj := $(rom_obj:.o=_debug.o)
+pokemon_yellow_balanced_vc_obj    := $(rom_obj:.o=_vc.o)
 
 
 ### Build tools
@@ -39,9 +39,9 @@ RGBLINK ?= $(RGBDS)rgblink
 .PHONY: all yellow yellow_debug yellow_vc clean tidy tools test
 
 all: $(roms)
-yellow:       pokemon_yellow_legacy.gbc
-yellow_debug: pokemon_yellow_legacy_debug.gbc
-yellow_vc:    pokemon_yellow_legacy.patch
+yellow:       pokemon_yellow_balanced.gbc
+yellow_debug: pokemon_yellow_balanced_debug.gbc
+yellow_vc:    pokemon_yellow_balanced.patch
 
 clean: tidy
 	find gfx \
@@ -61,9 +61,9 @@ tidy:
 	      $(patches:.patch=_vc.gbc) \
 	      $(patches:.patch=_vc.sym) \
 	      $(patches:.patch=_vc.map) \
-	      $(pokemon_yellow_legacy_obj) \
-	      $(pokemon_yellow_legacy_vc_obj) \
-	      $(pokemon_yellow_legacy_debug_obj) \
+	      $(pokemon_yellow_balanced_obj) \
+	      $(pokemon_yellow_balanced_vc_obj) \
+	      $(pokemon_yellow_balanced_debug_obj) \
 	      rgbdscheck.o
 	$(MAKE) clean -C tools/
 
@@ -75,8 +75,8 @@ tools:
 PYTHON ?= python3
 test: $(roms) $(patches)
 	$(PYTHON) -m unittest discover -s .github/scripts -p 'test_*.py'
-	$(PYTHON) .github/scripts/smoke_test.py pokemon_yellow_legacy pokemon_yellow_legacy_debug
-	$(PYTHON) .github/scripts/scenario_tests.py pokemon_yellow_legacy pokemon_yellow_legacy_vc
+	$(PYTHON) .github/scripts/smoke_test.py pokemon_yellow_balanced pokemon_yellow_balanced_debug
+	$(PYTHON) .github/scripts/scenario_tests.py pokemon_yellow_balanced pokemon_yellow_balanced_vc
 	ruff check --config .github/ruff.toml .github/scripts tools/make_release_patches.py tools/upstream_rename.py tools/rival_counters.py tools/make_guide.py
 
 
@@ -86,8 +86,8 @@ ifeq ($(DEBUG),1)
 RGBASMFLAGS += -E
 endif
 
-$(pokemon_yellow_legacy_debug_obj): RGBASMFLAGS += -D _DEBUG
-$(pokemon_yellow_legacy_vc_obj):    RGBASMFLAGS += -D _YELLOW_VC
+$(pokemon_yellow_balanced_debug_obj): RGBASMFLAGS += -D _DEBUG
+$(pokemon_yellow_balanced_vc_obj):    RGBASMFLAGS += -D _YELLOW_VC
 
 %.patch: %_vc.gbc %.gbc vc/%.patch.template
 	tools/make_patch $*_vc.sym $^ $@
@@ -111,9 +111,9 @@ $1: $2 $$(shell tools/scan_includes $2) $(preinclude_deps) | rgbdscheck.o
 endef
 
 # Dependencies for objects
-$(foreach obj, $(pokemon_yellow_legacy_obj), $(eval $(call DEP,$(obj),$(obj:.o=.asm))))
-$(foreach obj, $(pokemon_yellow_legacy_debug_obj), $(eval $(call DEP,$(obj),$(obj:_debug.o=.asm))))
-$(foreach obj, $(pokemon_yellow_legacy_vc_obj), $(eval $(call DEP,$(obj),$(obj:_vc.o=.asm))))
+$(foreach obj, $(pokemon_yellow_balanced_obj), $(eval $(call DEP,$(obj),$(obj:.o=.asm))))
+$(foreach obj, $(pokemon_yellow_balanced_debug_obj), $(eval $(call DEP,$(obj),$(obj:_debug.o=.asm))))
+$(foreach obj, $(pokemon_yellow_balanced_vc_obj), $(eval $(call DEP,$(obj),$(obj:_vc.o=.asm))))
 
 endif
 
@@ -121,11 +121,11 @@ endif
 %.asm: ;
 
 
-pokemon_yellow_legacy_pad       = 0x00
-pokemon_yellow_legacy_debug_pad = 0xff
-pokemon_yellow_legacy_vc_pad    = 0x00
+pokemon_yellow_balanced_pad       = 0x00
+pokemon_yellow_balanced_debug_pad = 0xff
+pokemon_yellow_balanced_vc_pad    = 0x00
 
-opts = -cjsv -k 01 -l 0x33 -m 0x1b -r 03 -t "POKEMON YELLOW LEGACY"
+opts = -cjsv -k 01 -l 0x33 -m 0x1b -r 03 -t "POKEMON YELLOW BALANCED"
 
 %.gbc: $$(%_obj) layout.link
 	$(RGBLINK) -p $($*_pad) -w -m $*.map -n $*.sym -l layout.link -o $@ $(filter %.o,$^)

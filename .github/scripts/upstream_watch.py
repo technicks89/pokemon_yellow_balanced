@@ -11,7 +11,7 @@ fork's main branch. It records the upstream head it was written for, so:
 
 Environment:
   GH_TOKEN    token for the gh CLI (issues: write on the fork)
-  REPO        the fork, e.g. technicks89/Pokemon_Yellow_Legacy
+  REPO        the fork, e.g. technicks89/pokemon_yellow_balanced
   UPSTREAM    the upstream repository, e.g. cRz-Shadows/Pokemon_Yellow_Legacy
   DRY_RUN=1   print what would happen instead of changing issues
 """

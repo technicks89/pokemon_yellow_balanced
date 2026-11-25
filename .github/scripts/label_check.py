@@ -9,7 +9,7 @@ merge, so a label they add is ignored (issue #128).
 Usage: label_check.py LABEL
 Environment:
   GH_TOKEN           token for the gh CLI (read access is enough)
-  GITHUB_REPOSITORY  e.g. technicks89/Pokemon_Yellow_Legacy
+  GITHUB_REPOSITORY  e.g. technicks89/pokemon_yellow_balanced
   PR_NUMBER          the pull request
 
 Exits 0 if the label is on the PR and was added by a maintainer, 1 otherwise.

@@ -27,7 +27,7 @@ OUTPUT = os.path.join(ROOT, 'docs', 'player_guide.pdf')
 SHOTS = os.path.join(ROOT, 'docs', 'guide')
 SUMMARY_MARKER = '<!-- guide: rival counter summary -->'
 # links to repository files point here in the PDF
-REPO_URL = 'https://github.com/technicks89/Pokemon_Yellow_Legacy/blob/main/'
+REPO_URL = 'https://github.com/technicks89/pokemon_yellow_balanced/blob/main/'
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import rival_counters  # noqa: E402
@@ -166,12 +166,12 @@ def build():
         canvas.saveState()
         canvas.setFont('Helvetica', 8)
         canvas.setFillColor(colors.HexColor('#777777'))
-        canvas.drawCentredString(A4[0] / 2, 10 * mm, f'Pokémon Yellow Legacy player guide · page {doc.page}')
+        canvas.drawCentredString(A4[0] / 2, 10 * mm, f'Pokémon Yellow Balanced player guide · page {doc.page}')
         canvas.restoreState()
 
     doc = SimpleDocTemplate(OUTPUT, pagesize=A4, leftMargin=20 * mm, rightMargin=20 * mm, topMargin=18 * mm,
-                            bottomMargin=18 * mm, title='Pokémon Yellow Legacy: Player Guide',
-                            author='Pokémon Yellow Legacy', invariant=1)
+                            bottomMargin=18 * mm, title='Pokémon Yellow Balanced: Player Guide',
+                            author='Pokémon Yellow Balanced', invariant=1)
     doc.build(story, onFirstPage=footer, onLaterPages=footer)
     print(f'wrote {os.path.relpath(OUTPUT)}')
 

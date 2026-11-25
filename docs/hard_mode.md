@@ -16,7 +16,7 @@ Hard mode is chosen once, in the new-game menu, and can't be changed afterwards.
 | Day-care | grows to Lv100 | stops growing at the cap |
 | 1/256 misses and failed crits | fixed: 100% accurate moves never miss, and a maxed crit rate is a guaranteed crit | kept, as in the original game |
 | Link battles | | use the Normal rules (crit and accuracy), so both consoles draw the same random numbers whatever mode each player is in |
-| Hall of Fame screen | "YELLOW LEGACY" | "LEGACY HARD" |
+| Hall of Fame screen | "YELLOW BALANCED" | "BALANCED HARD" |
 
 Nothing else depends on the difficulty byte: trainer AI and parties are the same in both modes.
 

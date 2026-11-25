@@ -116,7 +116,7 @@ class CheckWarningsTest(unittest.TestCase):
             os.unlink(f.name)
 
     def test_known_warning_passes(self):
-        self.assertEqual(self.check('warning: Truncating title "POKEMON YELLOW LEGACY" to 15 chars\n'), 0)
+        self.assertEqual(self.check('warning: Truncating title "POKEMON YELLOW BALANCED" to 15 chars\n'), 0)
 
     def test_new_warning_fails(self):
         self.assertEqual(self.check('warning: scripts/Foo.asm(12): [-Wobsolete]\n    deprecated\n'), 1)

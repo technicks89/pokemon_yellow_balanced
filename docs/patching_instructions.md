@@ -7,7 +7,7 @@ Pokémon Yellow ROM to get the game. The ROM itself isn't included.
 
 - A **clean** English *Pokémon Yellow Version* ROM (.gb or .gbc both work).
   It must not be modified: no randomizer, no other hack, no earlier Yellow
-  Legacy version.
+  Balanced or Yellow Legacy version.
 - The `.bps` patch file from the release zip (on the Releases page).
 - A patcher. Recommended: ROM Patcher JS, https://www.marcrobledo.com/RomPatcher.js/
   (works in any browser, including on phones).
@@ -28,12 +28,12 @@ Pokémon Yellow ROM to get the game. The ROM itself isn't included.
    release notes (it is also at the end of the copy of these instructions in
    the release zip). If it doesn't match, start again from a clean ROM.
    Never apply the patch to an already patched ROM.
-4. Name the result something like `Pokemon Yellow Legacy.gbc` and load it in
+4. Name the result something like `Pokemon Yellow Balanced.gbc` and load it in
    your emulator (for example mGBA on PC, Delta on iPhone).
 
 ## Saves
 
-- Before switching from an older Yellow Legacy version, **save in a Pokémon
+- Before switching from an older Yellow Balanced (or Yellow Legacy) version, **save in a Pokémon
   Center** and **back up your save file**.
 - Emulators find the save by the ROM's file name. If the new ROM has a
   different name, rename your old `.sav` file to match it (same name, `.sav`

@@ -1,5 +1,5 @@
 ; Values the CI emulator tests (.github/scripts/smoke_test.py and
-; scenario_tests.py) read from pokemon_yellow_legacy.sym, so they never parse
+; scenario_tests.py) read from pokemon_yellow_balanced.sym, so they never parse
 ; assembly source. EXPORT only adds .sym entries; the ROM is unchanged.
 
 	; wStatusFlags3 bit for a warp started by a script (constants/ram_constants.asm)
