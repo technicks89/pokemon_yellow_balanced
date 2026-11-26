@@ -8,7 +8,7 @@ Each agent verified its findings by reading the code, and some also ran builds, 
 
 - **Finding 1 was reproduced independently** in PyBoy: reading a beach-house poster in Pick Starter mode prints "3 error" instead of the poster text, while Normal mode shows "30 years of waves…".
 - **Two reviewer details were corrected after checking:**
-  - `vc/pokemon_yellow_balanced.constants.asm` is still used: `includes.asm` includes it for `_YELLOW_VC` builds. Only the `%.constants.sym` Makefile rule is dead (finding 12).
+  - `vc/Pokemon_Yellow_Balanced.constants.asm` is still used: `includes.asm` includes it for `_YELLOW_VC` builds. Only the `%.constants.sym` Makefile rule is dead (finding 12).
   - The `actions/cache` restores already fail on a miss (`fail-on-cache-miss: true`), so architecture item 9 is resolved.
 
 ## Priorities
@@ -135,7 +135,7 @@ Suggested order: fix 1 as a **1.1.1 hotfix** (along with 3, so the test that sho
 3. **Low: the scenario tests replay the intros the smoke test already plays.** Merging the two jobs and reusing saved states would save a runner and 20-40 s, at the cost of one fewer PR check.
 4. **Low: five sub-second checks each start a runner** (Warnings, Tracked files, ROM changes, Save layout, Bank space), costing about 1.5-2 runner-minutes per run. They could be steps in one job, at the cost of separate PR checks. These were split on purpose.
 5. **Low: "Total free" ROM space is understated by about 1 MB** (`compare_builds.py:146-149`). Banks 65-127 are empty but not listed in the map. "Tightest bank" always reports an already-full bank. Add the unlisted banks to the total, and report the tightest *changed* bank.
-6. **Low: dead Makefile rule.** `Makefile:119-121` (`%.constants.sym`, which also runs `scan_includes` on a literal `%` on every make) and the `vc/%.constants.sym` entry in `tidy` (`Makefile:70`) are leftovers from the old VC pipeline. Delete them. Keep `vc/pokemon_yellow_balanced.constants.asm`, which is used.
+6. **Low: dead Makefile rule.** `Makefile:119-121` (`%.constants.sym`, which also runs `scan_includes` on a literal `%` on every make) and the `vc/%.constants.sym` entry in `tidy` (`Makefile:70`) are leftovers from the old VC pipeline. Delete them. Keep `vc/Pokemon_Yellow_Balanced.constants.asm`, which is used.
 
 *ROM space:* the fork's code is cheap, and nothing it added runs often. Bank 1 dropped from 738 to 206 bytes free (the Pick Starter section, which floats and will move if needed); banks 40 and 42 have about 230 bytes free. With 63 empty banks, nothing is at risk.
 

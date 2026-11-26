@@ -4,7 +4,7 @@ Every pull request and every push to `main` runs `.github/workflows/ci.yml`. Eac
 
 | Check | What it does | Can fail? |
 |---|---|---|
-| **Build** | Builds `pokemon_yellow_balanced.gbc`, the debug ROM and the Virtual Console patch (and its `_vc` ROM) with RGBDS 1.0.4. | yes |
+| **Build** | Builds `Pokemon_Yellow_Balanced.gbc`, the debug ROM and the Virtual Console patch (and its `_vc` ROM) with RGBDS 1.0.4. | yes |
 | **Warnings** | Fails on any build warning except the known title truncation (`.github/scripts/check_warnings.py`). | yes |
 | **Tracked files** | Fails if the build modified any tracked file. | yes |
 | **Smoke test** | Plays the opening in PyBoy: new game in Normal, Hard and Pick Starter (Charmander, Squirtle, Pikachu, the list wrap to Mew, paging), with the picker in the intro before the name screens; Oak's words when he gives the starter; the rival's comment on the pick and his counter (Squirtle against Charmander, Bulbasaur against Squirtle, Gastly against Mew, Geodude against Pidgey), first rival battle, Oak's lab scenes; a save from before the picker moved to the intro (the picker opens in the lab); the weak-starter warning for Magikarp; the picker's SELECT pages (types, base stats, moves); the debug ROM must reach its menu (`.github/scripts/smoke_test.py`). | yes |
@@ -39,8 +39,8 @@ The comparison checks need a build of the base commit:
 ```sh
 git worktree add --detach ../base main    # or a commit, e.g. the merge base: $(git merge-base HEAD main)
 make -C ../base yellow yellow_debug
-for f in ../base/pokemon_yellow_legacy*.{gbc,sym,map}; do [ -e "$f" ] && mv "$f" "${f/pokemon_yellow_legacy/pokemon_yellow_balanced}"; done    # bases from before the rename (f94f1e3)
-mkdir -p base-out && cp ../base/pokemon_yellow_balanced*.{gbc,sym,map} base-out/
+for f in ../base/pokemon_yellow_{legacy,balanced}*.{gbc,sym,map}; do [ -e "$f" ] || continue; n=$(basename "$f"); n=${n#pokemon_yellow_legacy}; n=${n#pokemon_yellow_balanced}; mv "$f" "../base/Pokemon_Yellow_Balanced$n"; done    # bases from before the ROM renames
+mkdir -p base-out && cp ../base/Pokemon_Yellow_Balanced*.{gbc,sym,map} base-out/
 python3 .github/scripts/compare_builds.py roms base-out .    # also: save, banks
 git worktree remove ../base
 ```

@@ -20,7 +20,7 @@ import os
 import re
 import sys
 
-ROMS = ['pokemon_yellow_balanced', 'pokemon_yellow_balanced_debug']
+ROMS = ['Pokemon_Yellow_Balanced', 'Pokemon_Yellow_Balanced_debug']
 NAME_LENGTH = 11
 
 # WRAM ranges copied to and from SRAM by engine/menus/save.asm

@@ -21,6 +21,7 @@
 # rgbds extras
 # *.map
 pokemon_yellow_*.map
+Pokemon_Yellow_*.map
 
 *.sym
 
